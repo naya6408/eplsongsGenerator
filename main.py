@@ -2,6 +2,10 @@ import os
 import pprint
 
 def setteamDirectory(teamName):
+    '''
+    changing our current working directory to the
+    team folder that we want to grab our chants
+    '''
     newDir = "/Users/junsuplee/Desktop/eplsongsGenerator/Teams" + "/" + teamName
     return newDir
 
@@ -17,7 +21,10 @@ print("Here are the list of teams that are available")
 currentDirectory = os.getcwd()
 newDirectory = currentDirectory + "/Teams"
 teamList =os.listdir(newDirectory)
-tempTeamlist = [x.lower() for x in teamList]
+
+tempTeamlist = [x.lower() for x in teamList] #putting all the team into lower cases for consistency
+
+
 pp = pprint.PrettyPrinter(indent=4)
 pp.pprint(tempTeamlist)
 
@@ -28,7 +35,7 @@ if(teamName.lower() in tempTeamlist):
     print("Correct Input. Thank you for the input")
     ourteamDir = setteamDirectory(teamName)
 else:
-    print("Wrong input. Please check your input")
+    print(teamName, " is a wrong input. Please check your input")
+    print("please refer to the list of teams above.")
 
-
-print("our current working directory is:", ourteamDir)
+teamDirectory = setteamDirectory(tea)
