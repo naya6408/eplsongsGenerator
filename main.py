@@ -1,13 +1,14 @@
 import os
 import pprint
+import sys
 
 def setteamDirectory(teamName):
     '''
     changing our current working directory to the
     team folder that we want to grab our chants
     '''
-    newDir = "/Users/junsuplee/Desktop/eplsongsGenerator/Teams" + "/" + teamName
-    return newDir
+    newteamDirectory = os.getcwd() + "/Teams/" + teamName
+    return newteamDirectory
 
 
 print("----------------------------------------------------")
@@ -28,14 +29,24 @@ tempTeamlist = [x.lower() for x in teamList] #putting all the team into lower ca
 pp = pprint.PrettyPrinter(indent=4)
 pp.pprint(tempTeamlist)
 
-
-teamName = input("Please enter the name of the team you would like to view the chant of:  \n")
-
-if(teamName.lower() in tempTeamlist):
-    print("Correct Input. Thank you for the input")
-    ourteamDir = setteamDirectory(teamName)
-else:
-    print(teamName, " is a wrong input. Please check your input")
-    print("please refer to the list of teams above.")
+while True:
+    teamName = str(input("Please enter the name of the team you would like to view the chant of: "))
+    try:
+        if(teamName.lower() in tempTeamlist):
+            print("Correct Input. Thank you for the input")
+            ourteamDir = setteamDirectory(teamName)
+            break
+        elif(teamName.strip(" ") == " "):
+            print("exiting program")
+            sys.exit()
+        else:
+            print(teamName, " is a wrong input. Please check your input")
+            print("please refer to the list of teams above.")
+            print("press enter if you would like to exit program")
+            continue
+    except SyntaxError:
+        print("wrong syntax!")
+        
+    
 
 teamDirectory = setteamDirectory(tea)
