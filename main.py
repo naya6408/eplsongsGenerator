@@ -11,6 +11,7 @@ def setteamDirectory(teamName):
     return newteamDirectory
 
 
+
 print("----------------------------------------------------")
 print("-Program Written by Junsup Lee (naya6408) on github-")
 print("----------------------------------------------------")
@@ -31,12 +32,13 @@ pp.pprint(tempTeamlist)
 
 while True:
     teamName = str(input("Please enter the name of the team you would like to view the chant of: "))
+    teamName = teamName.lower().strip(" ")
     try:
-        if(teamName.lower() in tempTeamlist):
+        if(teamName in tempTeamlist):
             print("Correct Input. Thank you for the input")
             ourteamDir = setteamDirectory(teamName)
             break
-        elif(teamName.strip(" ") == " "):
+        elif(teamName == "exit"):
             print("exiting program")
             sys.exit()
         else:
@@ -49,4 +51,14 @@ while True:
         
     
 
-teamDirectory = setteamDirectory(tea)
+teamDirectory = setteamDirectory(teamName)
+os.chdir(teamDirectory)
+print("here are the available list of chants for " + teamName)
+songList = os.listdir(teamDirectory)
+print(songList)
+
+selectedChant = str(input("Please select your song from the list: "))
+
+f = open(selectedChant, "r")
+print(f.read())
+
