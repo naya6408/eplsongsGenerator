@@ -12,6 +12,8 @@ Run the program by typing
 ```
 python main.py
 ```
+
+```
 Welcome to EPL Chant Generator of season 2019-2020
 This program allows users to generate epl chants of any given team of 2019-2020 season
 Here are the list of teams that are available
