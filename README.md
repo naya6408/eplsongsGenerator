@@ -13,6 +13,8 @@ Run the program by typing
 python main.py
 ```
 
+It will prompt you to enter the name of the team you would like to see the chant of. In this example,
+I will use arsenal.
 ```
 Welcome to EPL Chant Generator of season 2019-2020
 This program allows users to generate epl chants of any given team of 2019-2020 season
@@ -38,7 +40,7 @@ Here are the list of teams that are available
     'liverpool',
     'burnley',
     'wolverhamptonwanderers']
-Please enter the name of the team you would like to view the chant of:
+Please enter the name of the team you would like to view the chant of: arsenal
 ```
 
 
