@@ -10,6 +10,17 @@ def setteamDirectory(teamName):
     newteamDirectory = os.getcwd() + "/Teams/" + teamName
     return newteamDirectory
 
+def createsongList(songtxtList):
+    for i in range(len(songtxtList)):
+        songtxtList[i] = songtxtList[i][0:len(songtxtList[i])-4]
+        print(songtxtList)
+    return songtxtList
+
+def outputSong(filename, chantName):
+    selectedChant = filename + ".txt"
+    print("Here is the lyrics for ", filename)
+    f = open(selectedChant, "r")
+    print(f.read())
 
 
 print("----------------------------------------------------")
@@ -33,21 +44,18 @@ pp.pprint(tempTeamlist)
 while True:
     teamName = str(input("Please enter the name of the team you would like to view the chant of: "))
     teamName = teamName.lower().strip(" ")
-    try:
-        if(teamName in tempTeamlist):
-            print("Correct Input. Thank you for the input")
-            ourteamDir = setteamDirectory(teamName)
-            break
-        elif(teamName == "exit"):
-            print("exiting program")
-            sys.exit()
-        else:
-            print(teamName, " is a wrong input. Please check your input")
-            print("please refer to the list of teams above.")
-            print("press enter if you would like to exit program")
-            continue
-    except SyntaxError:
-        print("wrong syntax!")
+    if(teamName in tempTeamlist):
+        print("Correct Input. Thank you for the input")
+        ourteamDir = setteamDirectory(teamName)
+        break
+    elif(teamName == "exit"):
+        print("exiting program")
+        sys.exit()
+    else:
+        print(teamName, " is a wrong input. Please check your input")
+        print("please refer to the list of teams above.")
+        print("press type exit if you would like to exit program")
+        continue
         
     
 
@@ -55,10 +63,10 @@ teamDirectory = setteamDirectory(teamName)
 os.chdir(teamDirectory)
 print("here are the available list of chants for " + teamName)
 songList = os.listdir(teamDirectory)
-print(songList)
+songList = createsongList(songList)
+print("the list of songs are: ", songList)
 
 selectedChant = str(input("Please select your song from the list: "))
 
-f = open(selectedChant, "r")
-print(f.read())
+outputSong(selectedChant, selectedChant)
 
