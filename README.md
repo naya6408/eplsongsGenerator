@@ -48,6 +48,7 @@ Please enter the name of the team you would like to view the chant of: arsenal
 Now, it will list all the available chants for arsenal
 ```
 Correct Input. Thank you for the input
+
 here are the available list of chants for arsenal
 ['We_got_Ozil']
 ```
@@ -60,6 +61,7 @@ Please select your song from the list: "we_got_ozil"
 Then, it will finally show you the song lyrics.
 ```
 ('Here is the lyrics for ', 'we_got_ozil')
+
 We've got Ozil...
 Mesut Ozil...
 I just don't think you understand.
