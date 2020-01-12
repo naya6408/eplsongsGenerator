@@ -1,11 +1,11 @@
-# eplsongsGenerator
+## eplsongsGenerator
 Create or edit songs from the premier league teams 
 
 ```
 git clone <url>
-cd eplsongs Generator
+cd eplsongsGenerator
 ```
-First, clone the repository and change directory to the repository
+First, clone the repository and change directory to the eplsongsGenerator repository.
 
 # How to run
 ```
